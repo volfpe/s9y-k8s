@@ -14,6 +14,12 @@ spec:
     spec:
       containers:
       - name: server-container
-        image: volfpe/s9y-k8s-server:1
+        image: volfpe/s9y-k8s-server:3
         ports:
         - containerPort: 3000
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 3000
+          initialDelaySeconds: 0
+          periodSeconds: 2
