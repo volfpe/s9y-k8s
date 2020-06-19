@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: server-pod
+  name: server-pod-second
 spec:
   containers:
   - name: server-container
-    image: volfpe/s9y-k8s-server:3
+    image: volfpe/s9y-k8s-server-2:2
     ports:
     - containerPort: 3000
