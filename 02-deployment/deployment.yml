@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server-deployment-label
+  template:
+    metadata:
+      labels:
+        app: server-deployment-label
+    spec:
+      containers:
+      - name: server-container
+        image: volfpe/s9y-k8s-server:1
+        ports:
+        - containerPort: 3000
